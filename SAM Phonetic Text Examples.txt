@@ -1,0 +1,520 @@
+
+100 SA$= "AY4 AEM AH KUMPYUW3TER."110 CALL 16387
+
+
+
+         !text      "BAH7T, AH4DHER TAYMZ AY TAO5K VEH4RIY LOW."
+         !byte      $0d
+         !text      "TIXN WER7DZ."
+         !byte      $0d
+         !text      "THAHSAYZER-AA5N AH DIH2SK."
+         !byte      $0d
+         !text      "AY4 AEM AH KUMPYUW3TER."
+         !byte      $0d
+
+
+         !text      " KAEN NAW4 OW4N YOHR OW3N KAA4PIY AHV SAE5M. YOH4R KUMPYUW3TER"
+         !text      " IHZ REH4DIY TUX TAOK.",$22,$0d,$0a,"490 GOSUB 5",$0d,
+
+
+
+
+
+
+
+//char input[]={"/HAALAOAO MAYN NAAMAEAE IHSTT SAEBAASTTIHAAN \x9b\x9b\0"};
+//unsigned char input[]={"/HAALAOAO \x9b\0"};
+//unsigned char input[]={"AA \x9b\0"};
+//unsigned char input[] = {"GUH5DEHN TAEG\x9b\0"};
+
+//unsigned char input[]={"AY5 AEM EY TAO4LXKIHNX KAX4MPYUX4TAH. GOW4 AH/HEH3D PAHNK.MEYK MAY8 DEY.\x9b\0"};
+//unsigned char input[]={"/HEH3LOW2, /HAW AH YUX2 TUXDEY. AY /HOH3P YUX AH FIYLIHNX OW4 KEY.\x9b\0"};
+//unsigned char input[]={"/HEY2, DHIHS IH3Z GREY2T. /HAH /HAH /HAH.AYL BIY5 BAEK.\x9b\0"};
+//unsigned char input[]={"/HAH /HAH /HAH \x9b\0"};
+//unsigned char input[]={"/HAH /HAH /HAH.\x9b\0"};
+//unsigned char input[]={".TUW BIY5Y3,, OHR NAA3T - TUW BIY5IYIY., DHAE4T IHZ DHAH KWEH4SCHAHN.\x9b\0"};
+//unsigned char input[]={"/HEY2, DHIHS \x9b\0"};
+
+//unsigned char input[]={" IYIHEHAEAAAHAOOHUHUXERAXIX  \x9b\0"};
+//unsigned char input[]={" RLWWYMNNXBDGJZZHVDH \x9b\0"};
+//unsigned char input[]={" SSHFTHPTKCH/H \x9b\0"};
+
+//unsigned char input[]={" EYAYOYAWOWUW ULUMUNQ YXWXRXLX/XDX\x9b\0"};
+
+
+
+
+
+         !text      "(A)",$bd        ;Text to Phenome conversion
+         !text      "(!)=",$ae
+         !text      "(",$22,") =-AH5NKWOWT",$ad
+         !text      "(",$22,")=KWOW4T",$ad
+         !text      "(#)= NAH4MBE",$d2
+         !text      "($)= DAA4LE",$d2
+         !text      "(%)= PERSEH4N",$d4
+         !text      "(&)= AEN",$c4
+         !text      "(')",$bd
+         !text      "(*)= AE4STERIHS",$cb
+         !text      "(+)= PLAH4",$d3
+         !text      "(,)=",$ac
+         !text      " (-) =",$ad
+         !text      "(-)",$bd
+         !text      "(.)= POYN",$d4
+         !text      "(/)= SLAE4S",$c8
+         !text      "(0)= ZIY4RO",$d7
+         !text      " (1ST)=FER4S",$d4
+         !text      " (10TH)=TEH4NT",$c8
+         !text      "(1)= WAH4",$ce
+         !text      " (2ND)=SEH4KUN",$c4
+         !text      "(2)= TUW",$b4
+         !text      " (3RD)=THER4",$c4
+         !text      "(3)= THRIY",$b4
+         !text      "(4)= FOH4",$d2
+         !text      " (5TH)=FIH4FT",$c8
+         !text      "(5)= FAY4",$d6
+         !text      "(6)= SIH4K",$d3
+         !text      "(7)= SEH4VU",$ce
+         !text      " (8TH)=EY4T",$c8
+         !text      "(8)= EY4",$d4
+         !text      "(9)= NAY4",$ce
+         !text      "(:)=",$ae
+         !text      "(;)=",$ae
+         !text      "(<)= LEH4S DHAE",$ce
+         !text      "(=)= IY4KWUL",$da
+         !text      "(>)= GREY4TER DHAE",$ce
+         !text      "(?)=",$ae
+         !text      "(@)= AE6",$d4
+         !text      "(^)= KAE4RIX",$d4
+         !text      "]",$c1
+         !text      " (A.)=EH4Y.",$a0
+         !text      "(A) =A",$c8
+         !text      " (ARE) =AA",$d2
+         !text      " (AR)O=AX",$d2
+         !text      "(AR)#=EH4",$d2
+         !text      " ^(AS)#=EY4",$d3
+         !text      "(A)WA=A",$d8
+         !text      "(AW)=AO",$b5
+         !text      " :(ANY)=EH4NI",$d9
+         !text      "(A)^+#=EY",$b5
+         !text      "#:(ALLY)=ULI",$d9
+         !text      " (AL)#=U",$cc
+         !text      "(AGAIN)=AXGEH4",$ce
+         !text      "#:(AG)E=IH",$ca
+         !text      "(A)^%=E",$d9
+         !text      "(A)^+:#=A",$c5
+         !text      " :(A)^+ =EY",$b4
+         !text      " (ARR)=AX",$d2
+         !text      "(ARR)=AE4",$d2
+         !text      " ^(AR) =AA5",$d2
+         !text      "(AR)=AA5",$d2
+         !text      "(AIR)=EH4",$d2
+         !text      "(AI)=EY",$b4
+         !text      "(AY)=EY",$b5
+         !text      "(AU)=AO",$b4
+         !text      "#:(AL) =U",$cc
+         !text      "#:(ALS) =UL",$da
+         !text      "(ALK)=AO4",$cb
+         !text      "(AL)^=AO",$cc
+         !text      " :(ABLE)=EY4BU",$cc
+         !text      "(ABLE)=AXBU",$cc
+         !text      "(A)VO=EY",$b4
+         !text      "(ANG)+=EY4N",$ca
+         !text      "(ATARI)=AHTAA4RI",$d9
+         !text      "(A)TOM=A",$c5
+         !text      "(A)TTI=A",$c5
+         !text      " (AT) =AE",$d4
+         !text      " (A)T=A",$c8
+         !text      "(A)=A",$c5
+         !text      "]",$c2
+         !text      " (B) =BIY",$b4
+         !text      " (BE)^#=BI",$c8
+         !text      "(BEING)=BIY4IHN",$d8
+         !text      " (BOTH) =BOW4T",$c8
+         !text      " (BUS)#=BIH4",$da
+         !text      "(BREAK)=BREY5",$cb
+         !text      "(BUIL)=BIH4",$cc
+         !text      "(B)=",$c2
+         !text      "]",$c3
+         !text      " (C) =SIY",$b4
+         !text      " (CH)^=",$cb
+         !text      "^E(CH)=",$cb
+         !text      "(CHA)R#=KEH",$b5
+         !text      "(CH)=C",$c8
+         !text      " S(CI)#=SAY",$b4
+         !text      "(CI)A=S",$c8
+         !text      "(CI)O=S",$c8
+         !text      "(CI)EN=S",$c8
+         !text      "(CITY)=SIHTI",$d9
+         !text      "(C)+=",$d3
+         !text      "(CK)=",$cb
+         !text      "(COM)=KAH",$cd
+         !text      "(CUIT)=KIH",$d4
+         !text      "(CREA)=KRIYE",$d9
+         !text      "(C)=",$cb
+         !text      "]",$c4
+         !text      " (D) =DIY",$b4
+         !text      " (DR.) =DAA4KTE",$d2
+         !text      "#:(DED) =DIH",$c4
+         !text      ".E(D) =",$c4
+         !text      "#:^E(D) =",$d4
+         !text      " (DE)^#=DI",$c8
+         !text      " (DO) =DU",$d7
+         !text      " (DOES)=DAH",$da
+         !text      "(DONE) =DAH5",$ce
+         !text      "(DOING)=DUW4IHN",$d8
+         !text      " (DOW)=DA",$d7
+         !text      "#(DU)A=JU",$d7
+         !text      "#(DU)^#=JA",$d8
+         !text      "(D)=",$c4
+         !text      "]",$c5
+         !text      " (E) =IYIY",$b4
+         !text      "#:(E) ",$bd
+         !text      "':^(E) ",$bd
+         !text      " :(E) =I",$d9
+         !text      "#(ED) =",$c4
+         !text      "#:(E)D ",$bd
+         !text      "(EV)ER=EH4",$d6
+         !text      "(E)^%=IY",$b4
+         !text      "(ERI)#=IY4RI",$d9
+         !text      "(ERI)=EH4RI",$c8
+         !text      "#:(ER)#=E",$d2
+         !text      "(ERROR)=EH4ROH",$d2
+         !text      "(ERASE)=IHREY5",$d3
+         !text      "(ER)#=EH",$d2
+         !text      "(ER)=E",$d2
+         !text      " (EVEN)=IYVEH",$ce
+         !text      "#:(E)W",$bd
+         !text      "@(EW)=U",$d7
+         !text      "(EW)=YU",$d7
+         !text      "(E)O=I",$d9
+         !text      "#:&(ES) =IH",$da
+         !text      "#:(E)S ",$bd
+         !text      "#:(ELY) =LI",$d9
+         !text      "#:(EMENT)=MEHN",$d4
+         !text      "(EFUL)=FUH",$cc
+         !text      "(EE)=IY",$b4
+         !text      "(EARN)=ER5",$ce
+         !text      " (EAR)^=ER",$b5
+         !text      "(EAD)=EH",$c4
+         !text      "#:(EA) =IYA",$d8
+         !text      "(EA)SU=EH",$b5
+         !text      "(EA)=IY",$b5
+         !text      "(EIGH)=EY",$b4
+         !text      "(EI)=IY",$b4
+         !text      " (EYE)=AY",$b4
+         !text      "(EY)=I",$d9
+         !text      "(EU)=YUW",$b5
+         !text      "(EQUAL)=IY4KWU",$cc
+         !text      "(E)=E",$c8
+         !text      "]",$c6
+         !text      " (F) =EH4",$c6
+         !text      "(FUL)=FUH",$cc
+         !text      "(FRIEND)=FREH5N",$c4
+         !text      "(FATHER)=FAA4DHE",$d2
+         !text      "(F)F",$bd
+         !text      "(F)=",$c6
+         !text      "]",$c7
+         !text      " (G) =JIY",$b4
+         !text      "(GIV)=GIH5",$d6
+         !text      " (G)I^=",$c7
+         !text      "(GE)T=GEH",$b5
+         !text      "SU(GGES)=GJEH4",$d3
+         !text      "(GG)=",$c7
+         !text      " B#(G)=",$c7
+         !text      "(G)+=",$ca
+         !text      "(GREAT)=GREY4",$d4
+         !text      "(GON)E=GAO5",$ce
+         !text      "#(GH)",$bd
+         !text      " (GN)=",$ce
+         !text      "(G)=",$c7
+         !text      "]",$c8
+         !text      " (H) =EY4C",$c8
+         !text      " (HAV)=/HAE6",$d6
+         !text      " (HERE)=/HIY",$d2
+         !text      " (HOUR)=AW5E",$d2
+         !text      "(HOW)=/HA",$d7
+         !text      "(H)#=/",$c8
+         !text      "(H)",$bd
+         !text      "]",$c9
+         !text      " (IN)=IH",$ce
+         !text      " (I) =AY",$b4
+         !text      "(I) =A",$d9
+         !text      "(IN)D=AY5",$ce
+         !text      "SEM(I)=I",$d9
+         !text      " ANT(I)=A",$d9
+         !text      "(IER)=IYE",$d2
+         !text      "#:R(IED) =IY",$c4
+         !text      "(IED) =AY5",$c4
+         !text      "(IEN)=IYEH",$ce
+         !text      "(IE)T=AY4E",$c8
+         !text      "(I')=AY",$b5
+         !text      " :(I)^%=AY",$b5
+         !text      " :(IE) =AY",$b4
+         !text      "(I)%=I",$d9
+         !text      "(IE)=IY",$b4
+         !text      " (IDEA)=AYDIY5A",$c8
+         !text      "(I)^+:#=I",$c8
+         !text      "(IR)#=AY",$d2
+         !text      "(IZ)%=AY",$da
+         !text      "(IS)%=AY",$da
+         !text      "I^(I)^#=I",$c8
+         !text      "+^(I)^+=A",$d9
+         !text      "#:^(I)^+=I",$c8
+         !text      "(I)^+=A",$d9
+         !text      "(IR)=E",$d2
+         !text      "(IGH)=AY",$b4
+         !text      "(ILD)=AY5L",$c4
+         !text      " (IGN)=IHG",$ce
+         !text      "(IGN) =AY4",$ce
+         !text      "(IGN)^=AY4",$ce
+         !text      "(IGN)%=AY4",$ce
+         !text      "(ICRO)=AY4KRO",$c8
+         !text      "(IQUE)=IY4",$cb
+         !text      "(I)=I",$c8
+         !text      "]",$ca
+         !text      " (J) =JEY",$b4
+         !text      "(J)=",$ca
+         !text      "]",$cb
+         !text      " (K) =KEY",$b4
+         !text      " (K)N",$bd
+         !text      "(K)=",$cb
+         !text      "]",$cc
+         !text      " (L) =EH4",$cc
+         !text      "(LO)C#=LO",$d7
+         !text      "L(L)",$bd
+         !text      "#:^(L)%=U",$cc
+         !text      "(LEAD)=LIY",$c4
+         !text      " (LAUGH)=LAE4",$c6
+         !text      "(L)=",$cc
+         !text      "]",$cd
+         !text      " (M) =EH4",$cd
+         !text      " (MR.) =MIH4STE",$d2
+         !text      " (MS.)=MIH5",$da
+         !text      " (MRS.) =MIH4SIX",$da
+         !text      "(MOV)=MUW4",$d6
+         !text      "(MACHIN)=MAHSHIY5",$ce
+         !text      "M(M)",$bd
+         !text      "(M)=",$cd
+         !text      "]",$ce
+         !text      " (N) =EH4",$ce
+         !text      "E(NG)+=N",$ca
+         !text      "(NG)R=NX",$c7
+         !text      "(NG)#=NX",$c7
+         !text      "(NGL)%=NXGU",$cc
+         !text      "(NG)=N",$d8
+         !text      "(NK)=NX",$cb
+         !text      " (NOW) =NAW",$b4
+         !text      "N(N)",$bd
+         !text      "(NON)E=NAH4",$ce
+         !text      "(N)=",$ce
+         !text      "]",$cf
+         !text      " (O) =OH4",$d7
+         !text      "(OF) =AH",$d6
+         !text      " (OH) =OW",$b5
+         !text      "(OROUGH)=ER4O",$d7
+         !text      "#:(OR) =E",$d2
+         !text      "#:(ORS) =ER",$da
+         !text      "(OR)=AO",$d2
+         !text      " (ONE)=WAH",$ce
+         !text      "#(ONE) =WAH",$ce
+         !text      "(OW)=O",$d7
+         !text      " (OVER)=OW5VE",$d2
+         !text      "PR(O)V=UW",$b4
+         !text      "(OV)=AH4",$d6
+         !text      "(O)^%=OW",$b5
+         !text      "(O)^EN=O",$d7
+         !text      "(O)^I#=OW",$b5
+         !text      "(OL)D=OW4",$cc
+         !text      "(OUGHT)=AO5",$d4
+         !text      "(OUGH)=AH5",$c6
+         !text      " (OU)=A",$d7
+         !text      "H(OU)S#=AW",$b4
+         !text      "(OUS)=AX",$d3
+         !text      "(OUR)=OH",$d2
+         !text      "(OULD)=UH5",$c4
+         !text      "(OU)^L=AH",$b5
+         !text      "(OUP)=UW5",$d0
+         !text      "(OU)=A",$d7
+         !text      "(OY)=O",$d9
+         !text      "(OING)=OW4IHN",$d8
+         !text      "(OI)=OY",$b5
+         !text      "(OOR)=OH5",$d2
+         !text      "(OOK)=UH5",$cb
+         !text      "F(OOD)=UW5",$c4
+         !text      "L(OOD)=AH5",$c4
+         !text      "M(OOD)=UW5",$c4
+         !text      "(OOD)=UH5",$c4
+         !text      "F(OOT)=UH5",$d4
+         !text      "(OO)=UW",$b5
+         !text      "(O')=O",$c8
+         !text      "(O)E=O",$d7
+         !text      "(O) =O",$d7
+         !text      "(OA)=OW",$b4
+         !text      " (ONLY)=OW4NLI",$d9
+         !text      " (ONCE)=WAH4N",$d3
+         !text      "(ON'T)=OW4N",$d4
+         !text      "C(O)N=A",$c1
+         !text      "(O)NG=A",$cf
+         !text      " :^(O)N=A",$c8
+         !text      "I(ON)=U",$ce
+         !text      "#:(ON) =U",$ce
+         !text      "#^(ON)=U",$ce
+         !text      "(O)ST =O",$d7
+         !text      "(OF)^=AO4",$c6
+         !text      "(OTHER)=AH5DHE",$d2
+         !text      "R(O)B=RA",$c1
+         !text      "^R(O):#=OW",$b5
+         !text      "(OSS) =AO5",$d3
+         !text      "#:^(OM)=AH",$cd
+         !text      "(O)=A",$c1
+         !text      "]",$d0
+         !text      " (P) =PIY",$b4
+         !text      "(PH)=",$c6
+         !text      "(PEOPL)=PIY5PU",$cc
+         !text      "(POW)=PAW",$b4
+         !text      "(PUT) =PUH",$d4
+         !text      "(P)P",$bd
+         !text      " (P)S",$bd
+         !text      " (P)N",$bd
+         !text      " (PROF.)=PROHFEH4SE",$d2
+         !text      "(P)=",$d0
+         !text      "]",$d1
+         !text      " (Q) =KYUW",$b4
+         !text      "(QUAR)=KWOH5",$d2
+         !text      "(QU)=K",$d7
+         !text      "(Q)=",$cb
+         !text      "]",$d2
+         !text      " (R) =AA5",$d2
+         !text      " (RE)^#=RI",$d9
+         !text      "(R)R",$bd
+         !text      "(R)=",$d2
+         !text      "]",$d3
+         !text      " (S) =EH4",$d3
+         !text      "(SH)=S",$c8
+         !text      "#(SION)=ZHU",$ce
+         !text      "(SOME)=SAH",$cd
+         !text      "#(SUR)#=ZHE",$d2
+         !text      "(SUR)#=SHE",$d2
+         !text      "#(SU)#=ZHU",$d7
+         !text      "#(SSU)#=SHU",$d7
+         !text      "#(SED) =Z",$c4
+         !text      "#(S)#=",$da
+         !text      "(SAID)=SEH",$c4
+         !text      "^(SION)=SHU",$ce
+         !text      "(S)S",$bd
+         !text      ".(S) =",$da
+         !text      "#:.E(S) =",$da
+         !text      "#:^#(S) =",$d3
+         !text      "U(S) =",$d3
+         !text      " :#(S) =",$da
+         !text      "##(S) =",$da
+         !text      " (SCH)=S",$cb
+         !text      "(S)C+",$bd
+         !text      "#(SM)=ZU",$cd
+         !text      "#(SN)'=ZU",$ce
+         !text      "(STLE)=SU",$cc
+         !text      "(S)=",$d3
+         !text      "]",$d4
+         !text      " (T) =TIY",$b4
+         !text      " (THE) #=DHI",$d9
+         !text      " (THE) =DHA",$d8
+         !text      "(TO) =TU",$d8
+         !text      " (THAT)=DHAE",$d4
+         !text      " (THIS) =DHIH",$d3
+         !text      " (THEY)=DHE",$d9
+         !text      " (THERE)=DHEH",$d2
+         !text      "(THER)=DHE",$d2
+         !text      "(THEIR)=DHEH",$d2
+         !text      " (THAN) =DHAE",$ce
+         !text      " (THEM) =DHEH",$cd
+         !text      "(THESE) =DHIY",$da
+         !text      " (THEN)=DHEH",$ce
+         !text      "(THROUGH)=THRUW",$b4
+         !text      "(THOSE)=DHOH",$da
+         !text      "(THOUGH) =DHO",$d7
+         !text      "(TODAY)=TUXDE",$d9
+         !text      "(TOMO)RROW=TUMAA",$b5
+         !text      "(TO)TAL=TOW",$b5
+         !text      " (THUS)=DHAH4",$d3
+         !text      "(TH)=T",$c8
+         !text      "#:(TED) =TIX",$c4
+         !text      "S(TI)#N=C",$c8
+         !text      "(TI)O=S",$c8
+         !text      "(TI)A=S",$c8
+         !text      "(TIEN)=SHU",$ce
+         !text      "(TUR)#=CHE",$d2
+         !text      "(TU)A=CHU",$d7
+         !text      " (TWO)=TU",$d7
+         !text      "&(T)EN ",$bd
+         !text      "(T)=",$d4
+         !text      "]",$d5
+         !text      " (U) =YUW",$b4
+         !text      " (UN)I=YUW",$ce
+         !text      " (UN)=AH",$ce
+         !text      " (UPON)=AXPAO",$ce
+         !text      "@(UR)#=UH4",$d2
+         !text      "(UR)#=YUH4",$d2
+         !text      "(UR)=E",$d2
+         !text      "(U)^ =A",$c8
+         !text      "(U)^^=AH",$b5
+         !text      "(UY)=AY",$b5
+         !text      " G(U)#",$bd
+         !text      "G(U)%",$bd
+         !text      "G(U)#=",$d7
+         !text      "#N(U)=YU",$d7
+         !text      "@(U)=U",$d7
+         !text      "(U)=YU",$d7
+         !text      "]",$d6
+         !text      " (V) =VIY",$b4
+         !text      "(VIEW)=VYUW",$b5
+         !text      "(V)=",$d6
+         !text      "]",$d7
+         !text      " (W) =DAH4BULYU",$d7
+         !text      " (WERE)=WE",$d2
+         !text      "(WA)SH=WA",$c1
+         !text      "(WA)ST=WE",$d9
+         !text      "(WA)S=WA",$c8
+         !text      "(WA)T=WA",$c1
+         !text      "(WHERE)=WHEH",$d2
+         !text      "(WHAT)=WHAH",$d4
+         !text      "(WHOL)=/HOW",$cc
+         !text      "(WHO)=/HU",$d7
+         !text      "(WH)=W",$c8
+         !text      "(WAR)#=WEH",$d2
+         !text      "(WAR)=WAO",$d2
+         !text      "(WOR)^=WE",$d2
+         !text      "(WR)=",$d2
+         !text      "(WOM)A=WUH",$cd
+         !text      "(WOM)E=WIH",$cd
+         !text      "(WEA)R=WE",$c8
+         !text      "(WANT)=WAA5N",$d4
+         !text      "ANS(WER)=E",$d2
+         !text      "(W)=",$d7
+         !text      "]",$d8
+         !text      " (X) =EH4K",$d3
+         !text      " (X)=",$da
+         !text      "(X)=K",$d3
+         !text      "]",$d9
+         !text      " (Y) =WAY",$b4
+         !text      "(YOUNG)=YAHN",$d8
+         !text      " (YOUR)=YOH",$d2
+         !text      " (YOU)=YU",$d7
+         !text      " (YES)=YEH",$d3
+         !text      " (Y)=",$d9
+         !text      "F(Y)=A",$d9
+         !text      "PS(YCH)=AY",$cb
+         !text      "#:^(Y) =I",$d9
+         !text      "#:^(Y)I=I",$d9
+         !text      " :(Y) =A",$d9
+         !text      " :(Y)#=A",$d9
+         !text      " :(Y)^+:#=I",$c8
+         !text      " :(Y)^#=A",$d9
+         !text      "(Y)=I",$c8
+         !text      "]",$da
+         !text      " (Z) =ZIY",$b4
+         !text      "(Z)=",$da
+         !text      " (YOU)=YU",$d7
+         !text      " (YES)=YEH",$d3
+         !text      " (Y)=",$d9
+         !text      "F(Y)=A",$d9
+

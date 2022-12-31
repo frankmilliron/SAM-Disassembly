@@ -1,0 +1,366 @@
+=======================================
+=                                     =
+=               S.A.M.                =
+=                                     =
+=    ( SOFTWARE AUTOMATED MOUTH )     =
+=                                     =
+=    DOCS FROM: THE COMPUTER CON      =
+=    RE-WRITTEN BY: ANNA GRAHMME      =
+=                                     =
+=======================================
+
+
+  THESE DOCS ARE FROM THE 1982 VERSION
+OF S.A.M. THE '82 VERSION REQUIRED AN
+EXTRA PIECE OF HARDWARE TO OPERATE, BUT
+THE NEW VERSION IS COMPLETELY SOFTWARE-
+DRIVEN AND REQUIRES >NO< SPECIAL CARDS.
+THE PHONETIC, STRESS, AND PUNCTUATION
+DATA ARE THE SAME FOR THE TWO VERSIONS;
+HOWEVER, THE ADDRESS LOCATION INFO
+MAY DIFFER.
+
+
+  THE PROGRAMS
+  ------------
+
+S.A.M.:
+  THIS PROGRAM BOOTS AUTOMATICALLY.
+IT PREPARES THE COMPUTER TO ACCEPT
+SPEECH INPUT THOURGH BASIC OR MACHINE
+LANGUAGE PROGRAMS. (OCCUPIES 9K)
+
+RECITER:
+  THIS IS AN ENGLISH TEXT-TO-SPEECH
+PROGRAM THAT INTERFACES WITH 'S.A.M.'
+(OCCUPIES 6K)
+
+SAYIT:
+  A SHORT BASIC PROGRAM THAT ALLOWS
+YOU TO ENTER A STRING OF PHONEMES OR
+TEXT FOR S.A.M. TO RECITE.
+
+DEMO:
+  A BASIC PROGRAM THAT DEMONSTATES
+SOME OF S.A.M.'S FEATURES BY TELLING A
+SHORT STORY.
+
+SPEECHES:
+  ANOTHER DEMONSTRATION PROGRAM. IT
+RECITES SOME FAMOUS SPEECHES.
+
+GUESSNUM:
+  A VOCAL VERSION OF THE GAME GUESS- THE-NUMBER.
+
+
+  USING S.A.M. FROM APPLESOFT
+  ---------------------------
+
+  PHONEME INPUT:
+
+]100 SA$="AY3 AEM AH KUMPYUW3TER"
+]110 CALL 38128
+
+  ENGLISH INPUT:
+
+]100 PRINT CHR$(4);"BLOAD RECITER"
+]110 SA$="I AM A COMPUTER"
+]120 CALL 38131
+
+(NOTE: THE CALL LOCATION IS DIFFERENT!)
+
+
+  SOME CAUTIONS
+  -------------
+
+  1) DON'T OVERWRITE S.A.M.'S MEMORY.
+IN APPLESOFT THIS CAN BE AVOIDED BY
+USING A HIMEM:29024.
+
+  2) NEVER HIT <RESET> WHILE S.A.M. IS
+SPEAKING. USE <CTRL-C> TO EXIT INSTEAD.
+
+
+  PHONETIC INPUT
+  --------------
+
+  PHONETIC INPUT INCREASES THE CLARITY
+OF THE SPEECH. ALSO, THE ABILITY TO
+ALTER INFLECTION ADDS EMOTION AND MAKES
+THE VOICE SOUND MORE NATURAL TO HUMAN
+EARS.
+
+
+  PHONETIC ALPHABET
+  -----------------
+
+*************** VOWELS ****************
+
+PHONEME       EXAMPLE WORD      SOUND
+-------       ------------      -----
+IY            FEET              EE
+IH            PIN               I
+EH            BEG               E
+AE            SAM               A
+AA            POT               O
+AO            TALK              AL
+OH            CONE              O
+UH            BOOK              OO
+UX            LOOT              OO
+ER            BIRD              IR
+AX            GALLON            O
+IX            DIGIT             I
+ 
+************** DIPHTHONGS *************
+
+PHONEME       EXAMPLE WORD      SOUND
+------        ------------      -----
+EY            MADE              A
+AY            HIGH              IGH
+OY            BOY               OY
+AW            HOW               OW
+OW            SLOW              OW
+UW            CREW              EW
+
+PHONEME       USAGE
+-------       -----
+YX            DIPHTHONG ENDING
+WX            DIPHTHONG ENDING
+RX            R AFTER A VOWEL
+LX            L AFTER A VOWEL
+/X            H BEFORE A NON-FRONT
+              VOWEL OR CONSONANT
+DX            "FLAP" EX: T IN PITY
+
+********** VOICED CONSONANTS **********
+
+PHONEME       EXAMPLE WORD      SOUND
+-------       ------------      -----
+R             RED               R
+L             ALLOW             LL
+W             AWAY              W
+WH            WHALE             WH
+Y             YOU               Y
+M             SAM               M
+N             MAN               N
+NX            SONG              NG
+B             BAD               B
+D             DOG               D
+G             AGAIN             G
+J             JUDG              J DG
+Z             ZOO               Z
+ZH            PLEASURE          S
+V             SEVEN             V
+DH            THEN              TH
+
+********** UNVOICED CONSONANTS ********
+
+PHONEME       EXAMPLE WORD      SOUND
+-------       ------------      -----
+S             SAM               S
+SH            FISH              SH
+F             FISH              F
+TH            THIN              TH
+P             POKE              P
+T             TALK              T
+K             CAKE              C K
+CH            SPEECH            CH
+/H            AHEAD             H
+
+*********** SPECIAL PHONEMES **********
+
+
+PHONEME       EXAMPLE WORD      SOUND
+-------       ------------      -----
+UL            SETTLE            LE (=AXL)
+UM            ASTRONOMY         OM
+(=AXM)
+UN            FUCTION           ON
+(=AXN)
+Q             KITT-EN           -
+(GLOTTAL STOP)
+
+***************************************
+
+
+  ADDING STRESS TO S.A.M.'S SPEECH
+  --------------------------------
+
+  S.A.M.'S STRESS CAN BE CHANGED BY
+ADDING NUMBERS TO THE WORDS IN PHONEME INPUT.
+
+  HERE IS AN EXAMPLE SHOWING DIFFERENT
+WAYS OF STRESSING THE STATEMENT "WHY
+SHOULD I WALK TO THE STORE?"
+
+  1) WAY2 SHUH7D AY WAO5K TUX DHAH STOH5R. (YOU WANT THE REASON WHY.)
+
+  2) WAY7 SHUH2D AY WAO7K TUX DHAH STOH5R. (YOU ARE RELUCTANT TO GO.)
+ 
+  3) WAY5 SHUH7D AY2 WAO7K DHAH STOHR.
+(YOU WANT SOMEONE ELSE TO DO IT.)
+
+  4) WAY5 SHUHD AY7 WAO2K TUX7 DHAH STOHR. (YOU'D RATHER DRIVE.)
+
+  5) WAY5 SHUHD AY WAO5K TUX DHAH STOH2OH7R. (YOU WANT TO WALK SOMEWHERE
+ELSE.)
+
+  THE STRESS MARKERS:
+
+1= VERY EMOTIONAL STRESS
+2= VERY EMPHATIC STRESS
+3= RATHER STRONG STRESS
+4= ORDINARY STRESS
+5= LIGHT STRESS
+6= NEUTRAL (NO PITCH CHANGE) STRESS
+7= PITCH-DROPPING STRESS
+8= EXTREME PITCH-DROPPING STRESS
+
+
+  THE EFFECTS OF PUNCTUATION
+  --------------------------
+
+  S.A.M. UNDERSTANDS FOUR PUNCTUATION
+MARKS: THE HYPHEN (-), THE COMMA (,),
+THE PERIOD (.), AND THE QUESTION MARK
+(?).
+  
+  THE HYPHEN (-) SERVES AS A SHORT
+PAUSE. THE COMMA (,)  SERVES AS A PAUSE
+ABOUT TWICE THE SIZE OF THE HYPEN. THE PERIOD (.)  SERVERS AS A PAUSE AND ALSO
+CAUSES THE PITCH TO FALL. THE QUESTION
+MARK (?) SERVES AS A PAUSE AND ALSO
+CAUSES THE PITCH TO RISE.
+
+
+  FINAL NOTE ON PHONETICS
+  -----------------------
+
+  S.A.M. IS CAPABLE OF SPEAKING ONLY
+2.5 SECONDS WITHOUT A BREAK. (THAT'S
+THE SIZE OF HIS BREATH.) IF THE STRING
+EXCEEDS 2.5 SECONDS THEN S.A.M. WILL
+PUT IN A PAUSE EVERY 2.5 SECONDS.
+
+
+  PITCH AND SPEED CHANGES
+  -----------------------
+
+PITCH:
+
+POKE PITCH, N
+WHEN N EQUALS:
+
+00-20     IMPRACTICAL
+20-30     VERY HIGH
+30-40     HIGH
+40-50     HIGH NORMAL
+50-70     NORMAL
+70-80     LOW NORMAL
+80-90     LOW
+90-255    VERY LOW
+DEFAULT=  64
+
+SPEED:
+
+POKE SPEED,M
+WHEN M EQUALS:
+
+00-20     INPRACTICAL
+20-40     VERY FAST
+40-60     FAST
+60-70     FAST CONVERSATIONAL
+70-75     NORMAL CONVERSATIONAL
+75-90     NARRATIVE
+90-100    SLOW
+100-255   VERY SLOW
+DEFAULT= 72
+
+
+
+  USING KNOBS
+  -----------
+
+  TO USE KNOBS, LOAD IT JUST LIKE
+RECITER. THEN YOU CAN POKE IN VALUES
+BETWEEN 0 AND 255.
+
+  KNOBS FOR S.A.M.  KNOBS FOR RECITER
+  ----------------  -----------------
+  THROAT = 33055    THROAT = 33055
+  MOUTH = 33056     MOUTH = 33056
+  CALL 28693        CALL 22357
+
+TO HEAR A  SPEED  PITCH  THROAT  MOUTH
+---------  -----  -----  ------  -----
+ELF        72     64     110     160
+LITTLE     92     60     190     190
+  ROBOT
+STUFFY     82     72     110     105
+  GUY
+LITTLE     82     32     145     145
+  OLD LADY
+EXTRA-     100    64     150     200
+  TERRESTRIAL
+S.A.M.     72     64     128     128
+
+  TO MAKE THE APPLE SOUND LIKE E.T.
+  ---------------------------------
+
+]10 POKE 38142,100: REM SETS SPEED
+]20 POKE 38141,64: REM SETS PITCH
+]30 POKE 33055,150: REM SETS THROAT
+]40 POKE 33056,200: REM SETS MOUTH
+]50 CALL 22357: REM CALLS KNOBS
+]60 SA$="I NEED TO PHONE HOME."
+]70 CALL 38131: REM CALLS RECITER
+
+
+  IMPORTANT ADDRESSES
+  -------------------
+
+S.A.M. FROM APPLESOFT       38128 $94F0
+RECITER FROM APPLESOFT      38131 $94F3
+S.A.M. FROM MACHINE LANG.   38134 $94F6
+RECITER FROM MACHINE LANG.  38137 $94F9
+SLOT                        38140 $94FC
+PITCH                       38141 $94FD
+SPEED                       38142 $94FE
+ERROR                       38143 $94FF
+ASCII STRING                38144 $9500
+                                 -$95FF
+HIMEM S.A.M.                29024 $7160
+HIMEM RECITER               22688 $58A0
+
+
+  MEMORY MAP
+  ----------
+
+    HEX  !----------------! DECIMAL
+         !      ROM       !
+         !----------------!
+  $9600  !      DOS       !  38400
+         !----------------!
+  $7160  !     S.A.M.     !  29024               !----------------!
+  $6000  !     RECITER    !  24576
+  $58A0  !----------------!  22688
+         !                !
+  $4000  !    HI-RES 2    !  16384
+         !----------------!
+         !       ...      !
+         !_______...______!
+
+
+=======================================
+=                                     =
+=  WELL, THAT'S IT. I'M NOT TOO SURE  =
+=  IF ALL OF THE ABOVE INFORMATION    =
+=  APPLIES TO THE NEW VERSION OF SAM, =
+=  BUT SOME OF IT MAY BE USEFUL TO    =
+=  YOU, LIKE THE PHONETIC ALPHABET.   =
+=  SO ->HAVE FUN<- AND REMEMBER...    =
+=                                     =
+=      "CHECK PUCE MOON TRUSTS!"      =
+=                                     =
+=======================================
+
