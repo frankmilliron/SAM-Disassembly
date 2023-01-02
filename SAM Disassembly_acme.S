@@ -68,31 +68,31 @@ Done     pla                         ;Done adding characters to buffer
          lda        AStore
          rts
 
-Control1 cmp        #$05             ;ENQ  Enquiry
+Control1 cmp        #$05             ;Ctrl-E
          bne        Control2
          lda        #$ff
          sta        Echo             ;Turn echo on
          bne        Done
 
-Control2 cmp        #$0e             ;SO  Shift Out
+Control2 cmp        #$0e             ;Ctrl-N
          bne        Control3
          lda        #$00
          sta        Echo             ;Turn echo off (Default in Setup)
          beq        Done
 
-Control3 cmp        #$14             ;DC4  Device Control 4
+Control3 cmp        #$14             ;Ctrl-T
          bne        Control4
          lda        #$ff             ;Set text entry mode (Default in Setup)
          sta        Mode
          bne        Done
 
-Control4 cmp        #$10             ;DLE  Data Link Escape
+Control4 cmp        #$10             ;Ctrl-P
          bne        Control5
          lda        #$00             ;Set phenome entry mode
          sta        Mode
          beq        Done
 
-Control5 cmp        #$0d             ;CR  Carriage Return
+Control5 cmp        #$0d             ;Ctrl-M
          bne        Done
          ldy        BufPos
          sta        InputBuf,y       ;Add last character
