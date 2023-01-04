@@ -20,7 +20,7 @@ Error:   .byte   $ff        ;$400B/16395: Error
 Echo:    .byte   $00        ;$400C/16396: $00=no echo to screen, $FF=echo char to screen
 Mode:    .byte   $00        ;$400D/16397: $00=phenome mode, $ff=text mode
 BufPos:  .byte   $2a        ;Current input buffer position
-AStore:  .byte   $8d        ;Accumulator storage
+A_Store: .byte   $8d        ;Accumulator storage
 InputBuf:
          .byte   "BAH7T, AH4DHER TAYMZ AY TAO5K VEH4RIY LOW." ;SAM input buffer ($100 bytes)
          .byte   $0d
@@ -40,24 +40,24 @@ InputBuf:
          .byte   $13,$c3,$cb,$1f,$48,$20,$55,$53,$45,$20,$46,$41,$43,$54,$4f,$52
          .byte   $0d,$00,$21,$0e,$01,$cd,$12,$02,$2a,$ed,$20,$22,$d0
 
-Setup:   lda     #<AddChar  ;Change output hooks to point to SAM input parser
+Setup:   lda     #<AddChar  ;Change Character SWitch to point to SAM input parser
          sta     MON_CSWL
          lda     #>AddChar
          sta     MON_CSWH
-Setup1:  lda     #$00
+         lda     #$00
          sta     Echo       ;Turn echo off
          sta     BufPos     ;Reset current buffer position
          lda     #$ff
          sta     Mode       ;Set text entry mode
          rts
 
-AddChar: sta     AStore     ;Add character to input buffer
+AddChar: sta     A_Store    ;Add character to input buffer
          txa
          pha
          tya
          pha
-         lda     AStore
-         and     #$7f       ;High ASCII
+         lda     A_Store
+         and     #$7f       ;High ASCII?
          cmp     #$20       ;Do we have a control character?
          bcc     Control1
          ldy     BufPos
@@ -71,7 +71,7 @@ Done:    pla                ;Done adding characters to buffer
          tay
          pla
          tax
-         lda     AStore
+         lda     A_Store
          rts
 
 Control1:
@@ -108,15 +108,15 @@ Control5:
          ldy     BufPos
          sta     InputBuf,y ;Add last character
          bit     Echo
-         beq     No_LF
+         beq     @NoLF
          lda     #$8d       ;High-ASCII return character
          jsr     MON_COUT1  ;Line Feed to screen
-No_LF:   bit     Mode       ;Which playback mode?
-         bne     DoTextMode
+@NoLF:   bit     Mode       ;Which playback mode?
+         bne     @TextMode
          jsr     PhenomeMode
          jmp     Done
 
-DoTextMode:
+@TextMode:
          jsr     TextMode
          jmp     Done
 
@@ -149,7 +149,7 @@ PlayPhenome:
          sta     InputTemp1,x
 @L41E0:  jsr     L632F
          lda     #$ff
-         sta     DoneFlag   ;(Was already #$FF?)
+         sta     DoneFlag   ;(Was already #$FF)
          jsr     L63AC
 Exit:    jmp     RestoreZP
 
@@ -169,7 +169,7 @@ InputTemp1:
          .byte   "CS 2:SETCOLOR 2,0,0:?"
 DoneFlag:
          .byte   $ff
-         .byte   $23        ;Part of Index02?
+         .byte   $23        ;?
 InputTemp2:
          .byte   $08,$01,$02,$0f,$07,$02,$02,$12,$04,$00,$0e,$06,$0b,$00,$04,$02
          .byte   $02,$0c,$09,$07,$06,$00,$0c,$07,$00,$06,$02,$02,$0e,$06,$01,$04
@@ -732,7 +732,7 @@ L49A9:   lda     #$00
 @L49D6:  inc     $ff
          jmp     @L49AD
 
-ZPbackup:
+ZP_Store:
          .byte   $4f,$80,$00,$00,$15,$ab,$05,$ab,$f2,$bc,$22,$bd,$5a,$bd,$b6,$bd ;Could be zeroed out?
          .byte   $0c,$01,$00,$00,$4c,$0b,$22,$01,$f1,$94,$00,$00,$00,$00,$00,$80
          .byte   "COPYRIGHT 1982 DON'T ASK - ALL RIGHTS l buffer to disk, XON se"
@@ -1116,14 +1116,14 @@ L5F8F:   ldy     #$00
 BackupZP:
          ldx     #$1f
 @Loop:   lda     $e0,x
-         sta     ZPbackup,x
+         sta     ZP_Store,x
          dex
          bne     @Loop
          rts
 
 RestoreZP:
          ldx     #$1f
-@Loop:   lda     ZPbackup,x
+@Loop:   lda     ZP_Store,x
          sta     $e0,x
          dex
          bne     @Loop
@@ -1906,7 +1906,8 @@ TextMode:
          lda     #$0d
          sta     Index15,x
          jsr     L66E4
-L66E0:   jsr     PlayPhenome ;Jumps to phenome mode here
+PlayPhenome1:
+         jsr     PlayPhenome ;Say converted phenomes
          rts
 
 L66E4:   lda     #$ff
@@ -1969,15 +1970,15 @@ L674E:   lda     #$0d
          sta     InputBuf,x
          lda     $fa
          sta     FA_Store
-         sta     $cd        ;This is never read again
-         jsr     L66E0
+         sta     $cd        ;Done converting to Phenomes
+         jsr     PlayPhenome1
          lda     FA_Store
          sta     $fa
          jmp     L66E8
 
 L6765:   lda     $f6
          and     #$80
-         bne     @L676C     ;always?
+         bne     @L676C     ;always
          brk
 
 @L676C:  lda     $fd
